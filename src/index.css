@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    color-scheme: dark;
+  }
+
+  :root:not(.dark) {
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* ============================================================ */
+/* LIGHT MODE THEME OVERRIDES (when .dark is not present)       */
+/* ============================================================ */
+
+:root:not(.dark) {
+  /* Scrollbar light styling */
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Base Surfaces in Light Mode */
+:root:not(.dark) .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+:root:not(.dark) .bg-slate-950\/95,
+:root:not(.dark) .bg-slate-950\/90,
+:root:not(.dark) .bg-slate-950\/85,
+:root:not(.dark) .bg-slate-950\/80,
+:root:not(.dark) .bg-slate-950\/70,
+:root:not(.dark) .bg-slate-950\/60 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+:root:not(.dark) .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+:root:not(.dark) .bg-slate-900\/95,
+:root:not(.dark) .bg-slate-900\/90,
+:root:not(.dark) .bg-slate-900\/85,
+:root:not(.dark) .bg-slate-900\/80,
+:root:not(.dark) .bg-slate-900\/70 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root:not(.dark) .bg-slate-850,
+:root:not(.dark) .bg-slate-850\/90,
+:root:not(.dark) .bg-slate-850\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+:root:not(.dark) .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+}
+
+:root:not(.dark) .bg-slate-800\/80,
+:root:not(.dark) .bg-slate-800\/70,
+:root:not(.dark) .bg-slate-800\/60 {
+  background-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+:root:not(.dark) .hover\:bg-slate-850:hover,
+:root:not(.dark) .hover\:bg-slate-800:hover,
+:root:not(.dark) .hover\:bg-slate-750:hover,
+:root:not(.dark) .hover\:bg-slate-700:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Borders in Light Mode */
+:root:not(.dark) .border-slate-800,
+:root:not(.dark) .border-slate-800\/80,
+:root:not(.dark) .border-slate-800\/60,
+:root:not(.dark) .border-slate-800\/40,
+:root:not(.dark) .border-slate-900\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+:root:not(.dark) .border-slate-700,
+:root:not(.dark) .border-slate-750 {
+  border-color: #cbd5e1 !important;
+}
+
+:root:not(.dark) .hover\:border-slate-700:hover {
+  border-color: #94a3b8 !important;
+}
+
+/* Typography in Light Mode (WCAG AA High-Contrast) */
+:root:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+:root:not(.dark) .text-slate-100 {
+  color: #0f172a !important;
+}
+
+:root:not(.dark) .text-slate-200 {
+  color: #1e293b !important;
+}
+
+:root:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+
+:root:not(.dark) .text-slate-400 {
+  color: #64748b !important;
+}
+
+:root:not(.dark) .text-slate-500 {
+  color: #64748b !important;
+}
+
+:root:not(.dark) .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+/* Dark text preservation on solid accent backgrounds (buttons, badges) */
+:root:not(.dark) .text-slate-950,
+:root:not(.dark) .bg-emerald-500 .text-slate-950,
+:root:not(.dark) .bg-emerald-400 .text-slate-950,
+:root:not(.dark) .bg-amber-400 .text-slate-950,
+:root:not(.dark) .bg-cyan-400 .text-slate-950 {
+  color: #020617 !important;
+}
+
+/* Tuned Accent Colors for Light Mode legibility */
+:root:not(.dark) .text-emerald-400,
+:root:not(.dark) .text-emerald-300 {
+  color: #059669 !important; /* WCAG 4.6:1 */
+}
+
+:root:not(.dark) .text-cyan-400,
+:root:not(.dark) .text-cyan-300 {
+  color: #0284c7 !important; /* WCAG 4.7:1 */
+}
+
+:root:not(.dark) .text-amber-400,
+:root:not(.dark) .text-amber-300 {
+  color: #d97706 !important; /* WCAG 4.5:1 */
+}
+
+:root:not(.dark) .text-rose-400,
+:root:not(.dark) .text-rose-300 {
+  color: #e11d48 !important; /* WCAG 4.6:1 */
+}
+
+:root:not(.dark) .text-indigo-400,
+:root:not(.dark) .text-indigo-300 {
+  color: #4f46e5 !important; /* WCAG 5.2:1 */
+}
+
+/* Gradients in Light Mode */
+:root:not(.dark) .from-slate-900,
+:root:not(.dark) .from-slate-950 {
+  --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+:root:not(.dark) .to-slate-850,
+:root:not(.dark) .to-slate-900 {
+  --tw-gradient-to: #f1f5f9 var(--tw-gradient-to-position) !important;
+}
+
+/* Shadow enhancements in Light Mode */
+:root:not(.dark) .shadow-2xl,
+:root:not(.dark) .shadow-xl {
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Mobile Frame Bezel in Light Mode */
+:root:not(.dark) .sm\:border-slate-800 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Preserve backdrop overlay darkness for focused dialogs */
+.fixed.bg-black\/85,
+.fixed.bg-black\/90,
+.fixed.bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.75) !important;
+}
+
+/* ============================================================ */
+/* Custom animations & utilities                                */
+/* ============================================================ */
+
+/* Hide scrollbar for tabs on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pulse animation for active heart rate */
+@keyframes heart-pulse {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.18); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 1.2s infinite ease-in-out;
+}
+
+/* Soft wave shimmer */
+@keyframes water-wave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-water-wave {
+  animation: water-wave 8s infinite ease-in-out;
+}

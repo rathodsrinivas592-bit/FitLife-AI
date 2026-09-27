@@ -1,0 +1,6 @@
+{
+  "name": "FitLife AI - Personalized Health & Fitness Companion",
+  "description": "Calculate daily calorie targets, track steps, water, heart rate, sleep, and generate personalized diet and workout plans tailored for weight loss, gain, or maintenance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
